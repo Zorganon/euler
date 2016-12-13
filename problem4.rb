@@ -8,25 +8,28 @@ def palendrome
 	#if so it checks to see the result is also three digits
 
 	# 998,001 - 10,000 is the start of the palendrome quest.
+	palendrom = 0
 
-	for each in (998001..900000)
-		digit_array = each.to_s.split(//)
-		if digit_array.length == 5
-			sofar = 1 if digit_array[0] == digit_array[-1] && digit_array[1] == digit_array[-2]
-		else
-			sofar = 1 if digit_array[0] == digit_array[-1] && digit_array[1] == digit_array[-2] && digit_array[2] == digit_array[-3]
-		end
-		#factoring method
-		if sofar == 1
-			for x in ((each/100)..each)
-				if each % x == 0 && num_digits(x) == 3
-					big_daddy = each
+	for each in (800000...998001)
+		digitstr = each.to_s
+		if (digitstr[0] == digitstr[-1])
+			if (digitstr[1] == digitstr[-2])				
+				if (digitstr[2] == digitstr[-3])
+					palendrom = 1
+					puts digitstr
 				end
-			end
+			end					
 		end
-		sofar = 0
+#		#factoring method
+#		if palendrom == 1
+#			for x in ((each/100)..each)
+#				if each % x == 0 && num_digits(x) == 3
+#					return each
+#				end
+#			end
+#		end
+#		sofar = 0
 	end
-	puts big_daddy
 end
 
 
