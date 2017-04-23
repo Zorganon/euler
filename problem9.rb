@@ -9,10 +9,10 @@ def pyTrip
 	z = 3
 	catalog = []
 
-	while x < 330
+	while x < 900
 		y = x+1
-		while y < 330
-			z = Math.sqrt((x*x)+(y*y)).to_i
+		while y < 900
+			z = Math.sqrt((x*x)+(y*y))
 				if x + y + z == 1000
 					catalog << [x, y, z]		
 				end
