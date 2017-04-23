@@ -5,34 +5,23 @@
 
 def pyTrip
 	x = 1
-	y = 1
-	z = 1
+	y = 2
+	z = 3
 	catalog = []
 
-	while x < 500
-		y = 2
-		z = Math.sqrt((x*x)+(y*y)).to_i
-		if z.is_a?(Integer) == true
-			catalog << [x, y, z]		
-		end
-		while y < 500
-			if x == 3
-				if y == 4
-					z = Math.sqrt((x*x)+(y*y))		
-					puts z
+	while x < 330
+		y = x+1
+		while y < 330
+			z = Math.sqrt((x*x)+(y*y)).to_i
+				if x + y + z == 1000
+					catalog << [x, y, z]		
 				end
-			end
-			z = Math.sqrt((x*x)+(y*y))
-			if z.is_a?(Integer) == true
-				catalog << [x, y, z]
-			end
 			y += 1
+		# end y loop
 		end
-		#^y loop
 		x += 1
-
+	# end X loop
 	end
-	#^X loop
 	puts catalog
 end
 
